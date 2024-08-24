@@ -1,2 +1,15 @@
-## python実行環境
-`uvicorn main:app --reload`
+## リアルタイムコメント
+　リアルタイムにコメントを表示するサーバー
+## セットアップ
+```bash
+pip install -r requirements.txt
+```
+## WebSocket
+```bash
+pip install websockets
+```
+
+## python実行
+```bash
+uvicorn main:app --reload
+```
