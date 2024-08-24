@@ -1,6 +1,7 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from typing import List
 from src.WsManager import WsManager
+from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -13,6 +14,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+@app.get("/")
+async def get():
+    return HTMLResponse("Hello Render")
 
 @app.websocket("/ws/")
 async def websocket_endpoint(websocket: WebSocket):
